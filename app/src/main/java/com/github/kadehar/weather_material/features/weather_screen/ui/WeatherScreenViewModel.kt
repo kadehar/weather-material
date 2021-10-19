@@ -18,6 +18,7 @@ class WeatherScreenViewModel(private val interactor: WeatherInteractor) :
     override suspend fun reduce(event: Event, previousState: ViewState): ViewState? {
         when (event) {
             is UIEvent.FetchWeather -> {
+                processDataEvent(DataEvent.OnDataLoad)
                 interactor.fetchWeather().fold(
                     onError = {
                         processDataEvent(DataEvent.ErrorWeatherRequest(it.localizedMessage ?: ""))
@@ -28,7 +29,10 @@ class WeatherScreenViewModel(private val interactor: WeatherInteractor) :
                 )
             }
             is DataEvent.SuccessWeatherRequest -> {
-                return previousState.copy(weather = event.weather)
+                return previousState.copy(weather = event.weather, isLoading = false)
+            }
+            is DataEvent.OnDataLoad -> {
+                return previousState.copy(isLoading = true)
             }
         }
         return null

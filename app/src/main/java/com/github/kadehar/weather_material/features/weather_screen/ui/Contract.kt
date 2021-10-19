@@ -13,6 +13,7 @@ sealed class UIEvent : Event {
 }
 
 sealed class DataEvent : Event {
+    object OnDataLoad: DataEvent()
     data class SuccessWeatherRequest(val weather: WeatherDomainModel) : DataEvent()
     data class ErrorWeatherRequest(val errorMessage: String) : DataEvent()
 }

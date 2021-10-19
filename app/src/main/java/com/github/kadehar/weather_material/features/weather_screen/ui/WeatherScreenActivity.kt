@@ -14,6 +14,7 @@ class WeatherScreenActivity : AppCompatActivity() {
     private lateinit var cardTempTV: TextView
     private lateinit var cardHumidityTV: TextView
     private lateinit var cardSpeedTV: TextView
+    private lateinit var progressBar: ProgressBar
     private val weatherViewModel by viewModel<WeatherScreenViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +28,8 @@ class WeatherScreenActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
 
+        progressBar = findViewById(R.id.weather_progressBar)
+
         setToStore(city)
         cardTempTV = findViewById(R.id.card_temp)
         cardHumidityTV = findViewById(R.id.card_humidity)
@@ -36,7 +39,12 @@ class WeatherScreenActivity : AppCompatActivity() {
     }
 
     private fun render(viewState: ViewState) {
+        updateProgressBar(viewState)
         updateScreen(viewState)
+    }
+
+    private fun updateProgressBar(viewState: ViewState) {
+        progressBar.isVisible = viewState.isLoading
     }
 
     private fun updateScreen(viewState: ViewState) {
