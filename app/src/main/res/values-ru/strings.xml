@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Погода</string>
+    <string name="city_hint">Город</string>
+    <string name="temperature">Температура</string>
+    <string name="choose_city">Выбор города</string>
+    <string name="wind">Ветер</string>
+    <string name="temperature_title">Температура %1$s</string>
+    <string name="humidity_title">Влажность %1$s</string>
+    <string name="speed_title">Скорость %1$s</string>
+    <string name="toast_msg">Выбранный город: %1$s</string>
+</resources>
