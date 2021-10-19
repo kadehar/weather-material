@@ -23,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".features.weather_screen.ui.WeatherScreenActivity" />
         <activity android:name=".features.cities_screen.ui.CityScreenActivity" />
     </application>
 

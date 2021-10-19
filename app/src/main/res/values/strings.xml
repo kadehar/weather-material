@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Weather</string>
     <string name="city_hint">City</string>
+    <string name="temperature">Temperature</string>
+    <string name="choose_city">Choosing a city</string>
+    <string name="wind">Wind</string>
+    <string name="humidity_title">Humidity %1$s</string>
+    <string name="speed_title">Speed %1$s</string>
+    <string name="temperature_title">Temperature %1$s</string>
+    <string name="toast_msg">Chosen city: %1$s</string>
 </resources>
