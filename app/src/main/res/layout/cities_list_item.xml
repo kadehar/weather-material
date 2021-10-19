@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:minHeight="64dp">
+
+    <ImageView
+        android:id="@+id/cities_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/city"
+        android:layout_marginTop="2.5dp"
+        android:padding="16dp"
+        tools:srcCompat="@drawable/ic_cities"/>
+
+    <TextView
+        android:id="@+id/cities_list_item_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/cities_icon"
+        android:maxLines="1"
+        android:padding="5dp"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
+        android:textColor="@color/cities_list_item_tint"
+        tools:text="Title" />
+
+    <TextView
+        android:id="@id/cities_list_item_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cities_list_item_title"
+        android:layout_gravity="center_vertical"
+        android:layout_toEndOf="@id/cities_icon"
+        android:maxLines="2"
+        android:padding="5dp"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/cities_list_item_tint"
+        tools:text="Content" />
+
+
+</RelativeLayout>
